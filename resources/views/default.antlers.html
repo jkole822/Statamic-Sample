@@ -1,0 +1,13 @@
+{{ page_builder }}
+    {{ hero }}
+        {{ partial:page_builders/hero }}
+    {{ /hero }}
+    <div class="px-5 max-w-7xl mx-auto">
+        {{ contact_form }}
+            {{ partial:page_builders/contact-form}}
+        {{ /contact_form }}
+        {{ features }}
+            {{ partial:page_builders/features }}
+        {{ /features }}
+    </div>
+{{ /page_builder }}

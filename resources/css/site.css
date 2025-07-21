@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@source "../views";
+@source "../../content";
+
+@theme {
+    --breakpoint-2xs: 384px;
+    --breakpoint-xs: 512px;
+}

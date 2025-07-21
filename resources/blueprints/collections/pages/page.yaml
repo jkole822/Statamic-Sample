@@ -1,0 +1,155 @@
+order: 1
+title: Page
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        display: Main
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: author
+            field:
+              type: users
+              display: Author
+              default: current
+              localizable: true
+              max_items: 1
+          -
+            handle: template
+            field:
+              type: template
+              display: Template
+              localizable: true
+      -
+        display: 'Page Builder'
+        fields:
+          -
+            handle: page_builder
+            field:
+              type: replicator
+              display: 'Page Builder'
+              sets:
+                content:
+                  display: Content
+                  sets:
+                    hero:
+                      display: Hero
+                      fields:
+                        -
+                          handle: hero
+                          field:
+                            type: group
+                            display: Hero
+                            fields:
+                              -
+                                handle: image
+                                field:
+                                  container: assets
+                                  type: assets
+                                  display: Image
+                              -
+                                handle: headline
+                                field:
+                                  type: text
+                                  display: Headline
+                              -
+                                handle: subheadline
+                                field:
+                                  type: text
+                                  display: Subheadline
+                              -
+                                handle: cta
+                                field:
+                                  type: link
+                                  display: CTA
+                    features:
+                      display: Features
+                      fields:
+                        -
+                          handle: features
+                          field:
+                            type: group
+                            display: Features
+                            fields:
+                              -
+                                handle: feature
+                                field:
+                                  type: replicator
+                                  display: Feature
+                                  sets:
+                                    new_set_group:
+                                      display: 'New Set Group'
+                                      sets:
+                                        content:
+                                          display: Content
+                                          fields:
+                                            -
+                                              handle: image
+                                              field:
+                                                container: assets
+                                                type: assets
+                                                display: Image
+                                            -
+                                              handle: headline
+                                              field:
+                                                type: text
+                                                display: Headline
+                                            -
+                                              handle: description
+                                              field:
+                                                remove_empty_nodes: false
+                                                type: bard
+                                                display: Description
+                                            -
+                                              handle: cta
+                                              field:
+                                                type: link
+                                                display: CTA
+                    contact_form:
+                      display: 'Contact Form'
+                      fields:
+                        -
+                          handle: contact_form
+                          field:
+                            type: group
+                            display: 'Contact Form'
+                            fields:
+                              -
+                                handle: headline
+                                field:
+                                  type: text
+                                  display: Headline
+                              -
+                                handle: form
+                                field:
+                                  max_items: 1
+                                  type: form
+                                  display: Form
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - pages
+              max_items: 1
+              listable: false
+              localizable: true

@@ -1,0 +1,23 @@
+<section class="hero h-screen relative xs:h-120">
+    <div class="absolute h-[inherit] size-full">
+        {{ image }}
+        <img src="{{ url }}" alt="{{ alt }}" class="object-cover size-full">
+        {{ /image }}
+    </div>
+    <div class="absolute bg-neutral-900 h-[inherit] opacity-40 size-full"></div>
+    <div class="h-[inherit] pt-20 px-5 max-w-7xl mx-auto relative">
+        <div class="sm:w-3/4">
+            {{ if headline }}
+                <h1 class="font-black text-6xl tracking-wide text-neutral-50">{{ headline }}</h1>
+            {{ /if }}
+            {{ if subheadline }}
+                <p class="pt-7 text-xl text-neutral-50">{{ subheadline }}</p>
+            {{ /if }}
+        </div>
+        {{ if cta }}
+        {{ cta }}
+            {{ partial:link class="absolute bottom-10 flex gap-4 right-5" :href="url" :target="target" :title="title" }}
+        {{ /cta }}
+        {{ /if }}
+    </div>
+</section>
