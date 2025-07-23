@@ -1,36 +1,47 @@
 <div class="py-10">
-    {{ form:contact }} {{ if headline }}
-    <h2 class="font-bold mb-2 text-white text-xl sm:text-3xl">
-        {{ headline }}
-    </h2>
-    {{ /if }} {{ if errors }}
-    <ul class="bg-red-300 errors p-2 rounded text-white">
-        {{ errors }}
-        <li>{{ value }}</li>
-        {{ /errors }}
-    </ul>
-    {{ /if }} {{ if success }}
-    <div class="bg-green-400 p-2 rounded success text-white">{{ success }}</div>
-    {{ /if }}
+    {{ form:contact }}
+        {{ if headline }}
+            <h2 class="font-bold mb-2 text-white text-xl sm:text-3xl">
+                {{ headline }}
+            </h2>
+        {{ /if }}
+        {{ if errors }}
+            <ul class="bg-red-300 errors p-2 rounded text-white">
+                {{ errors }}
+                    <li>{{ value }}</li>
+                {{ /errors }}
+            </ul>
+        {{ /if }}
+        {{ if success }}
+            <div class="bg-green-400 p-2 rounded success text-white">
+                {{ success }}
+            </div>
+        {{ /if }}
+        <div class="flex flex-col gap-3 max-w-2xl">
+            <label
+                class="flex flex-col font-light gap-1 tracking-wider uppercase"
+            >
+                Name {{ partial:input name="name" :value="old:name" }}
+            </label>
+            <label
+                class="flex flex-col font-light gap-1 tracking-wider uppercase"
+            >
+                Email
+                {{ partial:input type="email" name="email" :value="old:email" }}
+            </label>
+            <label
+                class="flex flex-col font-light gap-1 tracking-wider uppercase"
+            >
+                Message
+                {{ partial:text-area name="message" :value="old:message" }}
+            </label>
+        </div>
 
-    <div class="flex flex-col gap-3 max-w-2xl">
-        <label class="flex flex-col font-light gap-1 tracking-wider uppercase"
-            >Name {{ partial:input name="name" :value="old:name" }}</label
-        >
-        <label class="flex flex-col font-light gap-1 tracking-wider uppercase"
-            >Email {{ partial:input type="email" name="email" :value="old:email"
-            }}</label
-        >
-        <label class="flex flex-col font-light gap-1 tracking-wider uppercase"
-            >Message {{ partial:text-area name="message" :value="old:message"
-            }}</label
-        >
-    </div>
-
-    {{ partial:button class="mt-5" type="submit" }}
-    <div class="flex gap-1 items-center justify-center">
-        <span>Submit</span>
-        <img aria-hidden="true" class="size-5" src="/assets/bolt.svg" />
-    </div>
-    {{ /partial:button }} {{ /form:contact }}
+        {{ partial:button class="mt-5" type="submit" }}
+            <div class="flex gap-1 items-center justify-center">
+                <span>Submit</span>
+                <img aria-hidden="true" class="size-5" src="/assets/bolt.svg" />
+            </div>
+        {{ /partial:button }}
+    {{ /form:contact }}
 </div>

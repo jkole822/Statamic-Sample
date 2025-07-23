@@ -70,6 +70,11 @@ tabs:
                                 field:
                                   type: link
                                   display: CTA
+                              -
+                                handle: secondary_cta
+                                field:
+                                  type: link
+                                  display: 'Secondary CTA'
                     features:
                       display: Features
                       fields:

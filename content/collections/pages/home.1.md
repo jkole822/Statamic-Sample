@@ -4,16 +4,17 @@ blueprint: page
 title: Home
 author: 7e97d08f-07db-462a-ba58-5f0b5358a84f
 updated_by: 7e97d08f-07db-462a-ba58-5f0b5358a84f
-updated_at: 1753108091
+updated_at: 1753267218
 page_builder:
   -
     id: md4rxkyo
     hero:
       image:
         - hero.jpg
-      headline: Hero
+      headline: 'Lorem Ipsum'
       subheadline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
       cta: 'entry::64c5ddce-bd2d-4606-b1e2-dd732ca5189b'
+      secondary_cta: 'entry::3c848b86-23f7-48eb-b791-20c6fc01d44e'
     type: hero
     enabled: true
   -
