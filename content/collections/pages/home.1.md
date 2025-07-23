@@ -4,7 +4,7 @@ blueprint: page
 title: Home
 author: 7e97d08f-07db-462a-ba58-5f0b5358a84f
 updated_by: 7e97d08f-07db-462a-ba58-5f0b5358a84f
-updated_at: 1753267218
+updated_at: 1753281756
 page_builder:
   -
     id: md4rxkyo
@@ -53,7 +53,16 @@ page_builder:
                       content:
                         -
                           type: text
-                          text: 'In reprehenderit in voluptate'
+                          text: 'In '
+                        -
+                          type: text
+                          marks:
+                            -
+                              type: bold
+                          text: reprehenderit
+                        -
+                          type: text
+                          text: ' in voluptate'
                 -
                   type: listItem
                   content:

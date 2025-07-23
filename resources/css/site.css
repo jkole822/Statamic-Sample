@@ -7,3 +7,19 @@
     --breakpoint-2xs: 384px;
     --breakpoint-xs: 512px;
 }
+
+@layer base {
+    .bard {
+        blockquote {
+            @apply border-gray-300 border-l-4 italic my-2 pl-4 text-gray-600;
+        }
+
+        ul {
+            @apply list-disc list-inside;
+
+            p {
+                @apply inline-block;
+            }
+        }
+    }
+}
