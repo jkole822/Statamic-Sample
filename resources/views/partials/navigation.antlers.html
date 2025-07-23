@@ -1,0 +1,25 @@
+<nav
+    x-data="{ currentPath: '{{ uri }}' }"
+    class="bg-neutral-900 sticky top-0 w-full z-10"
+>
+    <div
+        class="flex items-center justify-between max-w-7xl mx-auto px-5 py-2.5"
+    >
+        {{ collection:navigation_meta limit="1" }}
+        <div
+            class="cursor-pointer rounded overflow-hidden ring-blue-400 size-15 has-focus-visible:ring-2"
+        >
+            <a href="/" class="outline-hidden" title="{{ title }}">
+                {{ image }}
+                <img
+                    src="{{ url }}"
+                    alt="{{ alt }}"
+                    class="object-contain size-full"
+                />
+                {{ /image }}
+            </a>
+        </div>
+        {{ /collection:navigation_meta }} {{ partial:mobile-navigation }} {{
+        partial:desktop-navigation }}
+    </div>
+</nav>

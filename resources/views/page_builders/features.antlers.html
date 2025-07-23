@@ -2,26 +2,33 @@
     {{ features }}
     <div class="gap-3 grid grid-cols-1 py-10 sm:grid-cols-3 md:gap-5">
         {{ feature }}
-        <div class="bg-neutral-100 text-neutral-800 flex flex-col gap-3 overflow-hidden rounded-lg shadow-md">
+        <div
+            class="bg-neutral-100 text-neutral-800 flex flex-col gap-3 overflow-hidden rounded-lg shadow-md"
+        >
             {{ image }}
-            <img src="{{ url }}" alt="{{ alt }}" class="h-50 object-cover w-full">
+            <img
+                src="{{ url }}"
+                alt="{{ alt }}"
+                class="h-50 object-cover w-full"
+            />
             {{ /image }}
             <div class="flex flex-col gap-6 h-full justify-between p-3">
                 {{ if title || description }}
                 <div>
                     {{ if headline }}
-                    <p class="font-extralight text-3xl tracking-widest uppercase">{{ headline }}</p>
-                    {{ /if }}
-                    {{ if description }}
+                    <p
+                        class="font-extralight text-3xl tracking-widest uppercase"
+                    >
+                        {{ headline }}
+                    </p>
+                    {{ /if }} {{ if description }}
                     <div class="mt-2">{{ description }}</div>
                     {{ /if }}
                 </div>
-                {{ /if }}
-                {{ if cta }}
-                {{ cta }}
-                {{ partial:link class="place-self-end [&_>_*]:w-fit sm:place-self-auto sm:[&_>_*]:w-full" :href="url" :target="target" :title="title" }}
-                {{ /cta }}
-                {{ /if }}
+                {{ /if }} {{ if cta }} {{ cta }} {{ partial:link
+                class="place-self-end [&_>_*]:w-fit sm:place-self-auto
+                sm:[&_>_*]:w-full" :href="url" :target="target" :title="title"
+                }} {{ /cta }} {{ /if }}
             </div>
         </div>
         {{ /feature }}
