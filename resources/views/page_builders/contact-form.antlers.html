@@ -6,14 +6,14 @@
             </h2>
         {{ /if }}
         {{ if errors }}
-            <ul class="bg-red-300 errors p-2 rounded text-white">
+            <ul class="bg-red-500 font-bold errors mb-2 p-2 rounded text-white w-fit">
                 {{ errors }}
                     <li>{{ value }}</li>
                 {{ /errors }}
             </ul>
         {{ /if }}
         {{ if success }}
-            <div class="bg-green-400 p-2 rounded success text-white">
+            <div class="bg-green-500 font-bold mb-2 p-2 rounded success text-white w-fit">
                 {{ success }}
             </div>
         {{ /if }}
